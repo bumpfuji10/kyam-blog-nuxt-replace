@@ -1,5 +1,14 @@
 <template>
   <div>
-    <h1>Hello World！</h1>
+    <NuxtPage />
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    const router = this.$router;
+    router.push('/home');
+  }
+}
+</script>
