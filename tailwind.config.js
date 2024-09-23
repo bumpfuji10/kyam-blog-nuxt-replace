@@ -1,7 +1,26 @@
-module.export = {
-  content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+    "./error.vue",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': "inherit",
+            maxWidth: "90vw"
+          }
+        }
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
