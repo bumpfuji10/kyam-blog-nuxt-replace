@@ -12,7 +12,7 @@ export const getArticles = () => {
   );
 };
 
-export const getArticle = (articleId: number) => {
+export const getArticle = (articleId: string) => {
   const articleUrl = `${URL}/${articleId}`;
   const config = useRuntimeConfig();
   return axios.get(
