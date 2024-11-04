@@ -3,9 +3,12 @@
     <div v-for="(article, index) in articles" :key="index">
       <div class="break-words article p-4" style="width: 100%;">
         <nuxt-link :to="`/articles/${article.id}`" class="articleCard flex border-4 border-black rounded-lg p-4 bg-white hover:bg-gray-200 items-center justify-between">
-          <h1 class="articleTitle text-lg font-bold break-keep">
-            {{ article.title }}
-          </h1>
+          <div class="grid">
+            <h1 class="articleTitle text-lg font-bold break-keep">
+              {{ article.title }}
+            </h1>
+            <span class="articleCreatedAt">{{ changeJtc(article.createdAt) }}</span>
+          </div>
           <div>
             <img class="articleThumbnail w-20" :src="article.image?.url" alt="Article thumbnail">
           </div>
@@ -18,6 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { getArticles } from '../src/api/article'
+import { japanTimeCreatedAt } from '../src/japanTimeCreatedAt'
 
 interface Article {
   id: string,
@@ -47,6 +51,9 @@ export default defineComponent({
       } catch (error) {
         console.error('記事の取得中にエラーが発生しました:', error);
       }
+    },
+    changeJtc(createdAt: string) {
+      return japanTimeCreatedAt(createdAt)
     }
   }
 })
