@@ -3,8 +3,8 @@
     <div class="mx-auto">
       <img src="/img/me_image.png" alt="" class="rounded-full max-h-48 w-auto border-4 border-black bg-gray-400">
     </div>
-    <div class="text-left text-xl flex justify-center json-info">
-      <pre style="font-size: 15px;">
+    <div class="text-left text-xl flex justify-center">
+      <pre class="json-info">
         {
           "name": "Yo Kamada",
           "age": 28,
@@ -39,7 +39,6 @@
 </template>
 
 <style scoped>
-
 .json-info {
   font-size: 14px;
 }
@@ -53,7 +52,7 @@
 
 @media (max-width: 480px) {
   .json-info {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 </style>
