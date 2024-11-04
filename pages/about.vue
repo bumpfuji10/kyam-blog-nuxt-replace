@@ -1,10 +1,10 @@
 <template>
   <div class="grid">
     <div class="mx-auto">
-      <img src="/public/img/me_image.png" alt="" class="rounded-full max-h-48 w-auto border-4 border-black bg-gray-400">
+      <img src="/img/me_image.png" alt="" class="rounded-full max-h-48 w-auto border-4 border-black bg-gray-400">
     </div>
-    <div class="flex justify-center text-left" style="font-size: 10px;">
-      <pre>
+    <div class="text-left text-xl flex justify-center json-info">
+      <pre style="font-size: 15px;">
         {
           "name": "Yo Kamada",
           "age": 28,
@@ -12,9 +12,19 @@
           "liveIn": "Yokohama",
           "job": "Web Engineer",
           "jobSkills": {
-            "languages": ["Ruby", "JavaScript"],
-            "frameworks": ["Ruby on Rails", "Vue.js"],
-            "others": ["Git", "SQL", "Docker"]
+            "languages": [
+              "Ruby",
+              "JavaScript"
+            ],
+            "frameworks": [
+              "Ruby on Rails",
+              "Vue.js"
+            ],
+            "others": [
+              "Git",
+              "SQL",
+              "Docker"
+            ]
           },
           "experienced": {
             "languages": ["PHP", "TypeScript"],
@@ -27,3 +37,23 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+
+.json-info {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .json-info {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .json-info {
+    font-size: 10px;
+  }
+}
+</style>
